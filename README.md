@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
+# MetalliSense - Alloy Alchemy Advisor
 
-## Project info
+🔬 **Advanced Alloy Analysis & Recommendation System**
 
-**URL**: https://lovable.dev/projects/a8705ac0-ae01-4348-a259-01e38257ce76
+MetalliSense is a comprehensive industrial application designed for alloy composition analysis, quality control, and intelligent recommendations in metallurgical processes. The system combines real-time spectrometer data analysis with AI-powered predictive analytics to optimize alloy production and quality management.
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+### Core Functionality
+- **Real-time Spectrometer Analysis** - Live metal composition analysis and visualization
+- **Alloy Recommendations** - AI-powered suggestions for optimal alloy compositions
+- **Quality Control Dashboard** - Comprehensive monitoring and analysis tools
+- **Predictive Analytics** - Advanced forecasting for production optimization
+- **Anomaly Detection** - Intelligent identification of composition irregularities
 
-**Use Lovable**
+### Advanced Features
+- **Furnace Monitoring** - Real-time temperature and process tracking
+- **Inventory Management** - Complete materials and alloy stock management
+- **Historical Data Analysis** - Trend analysis and performance metrics
+- **Neural Network Visualization** - Interactive ML model insights
+- **Multi-Grade Learning** - Support for various alloy types and standards
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a8705ac0-ae01-4348-a259-01e38257ce76) and start prompting.
+## 🛠️ Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### Frontend
+- **React** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for responsive styling
+- **shadcn/ui** for modern UI components
+- **Recharts** for data visualization
 
-**Use your preferred IDE**
+### Backend
+- **Django** REST Framework
+- **Python 3.10+**
+- **Celery** for background task processing
+- **PostgreSQL** database support
+- **Docker** containerization
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📦 Installation & Setup
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js 18+ and npm
+- Python 3.10+
+- Docker (optional, for containerized deployment)
 
-Follow these steps:
+### Frontend Setup
+```bash
+# Clone the repository
+git clone https://github.com/DevPrasath6/MetalliSense.git
+cd MetalliSense
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install frontend dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Backend Setup
+```bash
+# Navigate to backend directory
+cd backend
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-**Use GitHub Codespaces**
+# Install Python dependencies
+pip install -r requirements.txt
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Run migrations
+python manage.py migrate
 
-## What technologies are used for this project?
+# Start Django development server
+python manage.py runserver
+```
 
-This project is built with:
+### Docker Deployment
+```bash
+cd backend
+docker-compose up -d
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎯 Usage
 
-## How can I deploy this project?
+### Dashboard Navigation
+1. **Main Dashboard** - Overview of all system metrics and alerts
+2. **Analytics** - Detailed composition analysis and trends
+3. **Recommendations** - AI-generated alloy optimization suggestions
+4. **Quality Control** - Real-time quality monitoring and compliance
+5. **Furnace Monitoring** - Live furnace status and process control
+6. **Inventory** - Materials management and stock tracking
 
-Simply open [Lovable](https://lovable.dev/projects/a8705ac0-ae01-4348-a259-01e38257ce76) and click on Share -> Publish.
+### API Endpoints
+The backend provides RESTful APIs for:
+- Alloy composition data management
+- Real-time spectrometer readings
+- Recommendation engine access
+- Historical data queries
+- Quality control metrics
 
-## Can I connect a custom domain to my Lovable project?
+## 📊 Key Components
 
-Yes, you can!
+### Frontend Components
+- `ComprehensiveDashboard` - Main control interface
+- `SpectrometerPanel` - Real-time composition display
+- `AlloyRecommendationPanel` - AI suggestions interface
+- `QualityControl` - Quality metrics and alerts
+- `FurnaceMonitoring` - Process monitoring tools
+- `NeuralNetworkVisualizer` - ML model visualization
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Backend Services
+- `alloy_api` - Core API for alloy data management
+- `advanced_views` - Complex analytics and reporting
+- `utils` - Shared utilities and helper functions
+- `models` - Data models for alloy compositions
+- `serializers` - API data serialization
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🚦 Development
+
+### Available Scripts
+```bash
+# Frontend
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+
+# Backend
+python manage.py runserver              # Start Django server
+python manage.py migrate               # Run database migrations
+python manage.py createsuperuser       # Create admin user
+python manage.py collectstatic         # Collect static files
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👥 Authors
+
+- **DevPrasath6** - *Initial work* - [DevPrasath6](https://github.com/DevPrasath6)
+
+## 🙏 Acknowledgments
+
+- Industrial metallurgy standards and best practices
+- Modern web development frameworks and libraries
+- Open source community contributions
+
+---
+
+*MetalliSense - Revolutionizing alloy analysis through intelligent automation*
