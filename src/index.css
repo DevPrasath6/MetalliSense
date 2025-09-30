@@ -1,0 +1,159 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clean Professional Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Clean Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    
+    /* Card & Surface */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    
+    /* Interactive States */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    /* Neutral Palette */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --radius: 12px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* Clean Design System */
+@layer utilities {
+  /* Glass Morphism - Simplified */
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-lg border border-white/20 shadow-lg;
+    backdrop-filter: blur(16px);
+  }
+  
+  .glass-header {
+    @apply bg-white/95 backdrop-blur-xl border-b border-slate-200/80;
+    backdrop-filter: blur(20px);
+  }
+  
+  .glass-button {
+    @apply bg-white/80 backdrop-blur-sm border border-slate-200 hover:bg-white/90 transition-all duration-200;
+  }
+  
+  /* Elegant Shadows */
+  .shadow-elegant {
+    box-shadow: 
+      0 1px 3px rgb(0 0 0 / 0.1),
+      0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  
+  .shadow-premium {
+    box-shadow: 
+      0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  
+  /* Subtle Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-premium;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-200 hover:shadow-lg;
+  }
+  
+  /* Clean Text Effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent;
+  }
+  
+  /* Smooth Animations */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Responsive Containers */
+  .max-w-8xl {
+    max-width: 88rem;
+  }
+}
+
+/* Clean Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clean Scrollbar */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Clean Focus States */
+.focus-visible\:ring-custom:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 0.5);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .animate-fade-in-up {
+    animation-delay: 0ms !important;
+  }
+}

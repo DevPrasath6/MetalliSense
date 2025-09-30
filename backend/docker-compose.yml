@@ -1,0 +1,62 @@
+
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: alloy_mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+      MONGO_INITDB_DATABASE: alloy_alchemy_production
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+  redis:
+    image: redis:7-alpine
+    container_name: alloy_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  web:
+    build: .
+    container_name: alloy_django
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - MONGO_URI=mongodb://admin:admin123@mongodb:27017
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - mongodb
+      - redis
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
+
+  celery:
+    build: .
+    container_name: alloy_celery
+    restart: always
+    environment:
+      - DEBUG=True
+      - MONGO_URI=mongodb://admin:admin123@mongodb:27017
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - mongodb
+      - redis
+    volumes:
+      - .:/app
+    command: celery -A alloy_backend worker --loglevel=info
+
+volumes:
+  mongodb_data:
+  redis_data:
